@@ -1,0 +1,27 @@
+#cloud-config
+hostname: Jupyterlab-GPU-instance
+
+write_files:
+  - path: /run/start.sh
+    owner: root:root
+    permissions: '0755'
+    content: |
+      #!/bin/bash
+      set -eux
+      export HOME=/home/runner
+
+      mkdir -p ~/nibi
+
+      python3 -m venv pyenv
+      source pyenv/bin/activate
+      pip3 install jupyterlab
+      jupyter-lab --no-browser --allow-root --port 8181
+
+runcmd:
+  - apt-get update
+  - DEBIAN_FRONTEND=noninteractive apt-get install -y sshfs python3-pip python3.10-venv
+  - useradd -m runner || true
+  - cp /run/start.sh /home/runner/start.sh
+  - chown -R runner:runner /home/runner
+  - chmod 755 /home/runner/start.sh
+  - su - runner -c "/home/runner/start.sh"
