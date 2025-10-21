@@ -1,14 +1,14 @@
-🚀 launch_jupyterlab_gpu
+# launch_jupyterlab_gpu
 
 A lightweight Bash workflow to automatically launch a GPU-backed JupyterLab instance on the Arbutus OpenStack cloud and connect to it securely via SSH port forwarding.
 
-🧩 Requirements
+## 🧩 Requirements
 
 - A Digital Research Alliance Account
 - Member of rrg-akhanf allocation
 - python3 and bash
 
-⚙️ Setup
+## ⚙️ Setup
 ```bash
 # Step 1. Clone the repository
 git clone https://github.com/Dhananjhay/launch_jupyterlab_gpu.git
@@ -22,7 +22,7 @@ source venv/bin/activate
 pip install python-openstackclient
 ```
 
-🚀 Launching JupyterLab on GPU instance
+## 🚀 Launching JupyterLab on GPU instance
 ```bash
 # Step 4. Run the launcher
 ./launch_jupyterlab.sh
@@ -39,7 +39,7 @@ The script will:
 Press Ctrl + C anytime to stop the instance —
 the script will automatically delete the OpenStack server for cleanup.
 
-💾 (Optional) Mount Nibi Project Space
+## 💾 (Optional) Mount Nibi Project Space
 To access your Nibi project files, run the following command on a terminal window on JupyterLab:
 ```bash
 sshfs <username>@nibi.sharcnet.ca:/home/<username>/ /home/runner/nibi \
@@ -47,7 +47,7 @@ sshfs <username>@nibi.sharcnet.ca:/home/<username>/ /home/runner/nibi \
 
 ```
 
-🧠 Notes
+## 🧠 Notes
 
 - Average JupyterLab startup time: ~5 minutes
 - Default forwarded port: 8181 → 8000
