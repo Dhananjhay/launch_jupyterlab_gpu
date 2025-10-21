@@ -40,12 +40,13 @@ Press Ctrl + C anytime to stop the instance —
 the script will automatically delete the OpenStack server for cleanup.
 
 ## 💾 (Optional) Mount Nibi Project Space
-To access your Nibi project files, run the following command on a terminal once on JupyterLab:
+To access your Nibi project files, run the following command (switch `<username>` before) on a terminal on JupyterLab:
 ```bash
 sshfs <username>@nibi.sharcnet.ca:/home/<username>/ /home/runner/nibi \
   -o ServerAliveInterval=15,ServerAliveCountMax=3,Compression=no,follow_symlinks
 
 ```
+![JupyterLab Screenshot](images/image.jpg)
 
 ## 🧠 Notes
 
